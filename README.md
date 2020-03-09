@@ -16,6 +16,12 @@ The resources and changes for the web server can be found in the following repos
 
 ## Task 4.4: Test the web app locally
 
+![Test Local Server 4.4.1](Images/4.4_1_LocalServer.PNG)
+
+In order to validate the result of the insertion, we opened the DynamoDB console in AWS and get the elements stored in the table (our email accounts, names and decisions of preview)
+
+![Test Local Server 4.4.2](Images/4.4_2_LocalTest.PNG)
+
 ## Task 4.5: Create the AWS Beanstalk environment and deploy the sample web app
 
 ## Task 4.6: Configure Elastic Beanstalk CLI and deploy the target web app
