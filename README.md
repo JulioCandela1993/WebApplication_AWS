@@ -18,11 +18,11 @@ The resources and changes for the web server can be found in the following repos
 
 Before the execution, we had to modify the file environment.bat (Windows) since we got some problems in the set of variables (without quotes) and be sure that the aws configuration was set to the region specified (eu-west-1, you can use the command "aws configure"):
 
-@ECHO OFF
-SET DEBUG="True"
-SET STARTUP_SIGNUP_TABLE=gsg-signup-table
-SET AWS_REGION=eu-west-1
-ECHO %DEBUG%, %STARTUP_SIGNUP_TABLE%, %AWS_REGION%
+##### @ECHO OFF 
+##### SET DEBUG="True" 
+##### SET STARTUP_SIGNUP_TABLE=gsg-signup-table 
+##### SET AWS_REGION=eu-west-1
+##### ECHO %DEBUG%, %STARTUP_SIGNUP_TABLE%, %AWS_REGION%
 
 The server is succesfully running after executing the python scripts:
 
