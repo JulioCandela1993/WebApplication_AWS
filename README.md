@@ -16,6 +16,16 @@ The resources and changes for the web server can be found in the following repos
 
 ## Task 4.4: Test the web app locally
 
+Before the execution, we had to modify the file environment.bat (Windows) since we got some problems in the set of variables (without quotes) and be sure that the aws configuration was set to the region specified (eu-west-1, you can use the command "aws configure"):
+
+@ECHO OFF
+SET DEBUG="True"
+SET STARTUP_SIGNUP_TABLE=gsg-signup-table
+SET AWS_REGION=eu-west-1
+ECHO %DEBUG%, %STARTUP_SIGNUP_TABLE%, %AWS_REGION%
+
+The server is succesfully running after executing the python scripts:
+
 ![Test Local Server 4.4.1](Images/4.4_1_LocalServer.PNG)
 
 In order to validate the result of the insertion, we opened the DynamoDB console in AWS and get the elements stored in the table (our email accounts, names and decisions of preview)
