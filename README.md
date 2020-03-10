@@ -16,9 +16,9 @@ The IAM Policy (gsg-signup-policy) and Role (gsg-signup-role) were succesfully c
 
 ## Task 4.3: Create a DynamoDB Table 
 
-The gsg-signup-table was sucessfully created in Ireland region.
+The gsg-signup-table was successfully created in Ireland region.
 
-![Test Local Server 4.4.1](Images/4.3_DynamoTable.PNG)
+![DynamoTable 4.3](Images/4.3_DynamoTable.PNG)
 
 ## Task 4.4: Test the web app locally
 
