@@ -2,7 +2,7 @@
 # Lab 4: Creating a web application using cloud PaaS
 ## Group Members:
 - Eudald Sabaté Creixell: eudald.sabate@est.fib.upc.edu
-- Julio Candela (julio.christians.candela@est.fib.upc.edu)
+- Julio Candela: julio.christians.candela@est.fib.upc.edu
 
 # Experimentation  
 
@@ -12,7 +12,13 @@ The resources and changes for the web server can be found in the following repos
 
 ## Task 4.2: Create an IAM Policy and Role 
 
+The IAM Policy (gsg-signup-policy) and Role (gsg-signup-role) were succesfully created 
+
 ## Task 4.3: Create a DynamoDB Table 
+
+The gsg-signup-table was sucessfully created in Ireland region.
+
+![Test Local Server 4.4.1](Images/4.3_DynamoTable.PNG)
 
 ## Task 4.4: Test the web app locally
 
