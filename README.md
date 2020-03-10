@@ -40,6 +40,14 @@ In order to validate the result of the insertion, we opened the DynamoDB console
 
 ## Task 4.5: Create the AWS Beanstalk environment and deploy the sample web app
 
+During these steps, we faced some problems: 
+- First of all, the account must be validated in the region "Ireland". We sent an email to Amazon to allow this region for our account in EC2.
+- Then, the load balancer requires at least to sub regions, so in the configuration we changed it to sub region a and b.
+
+At the end, we could initiallize the web application:
+
+![Web Server 4.5](Images/4.5_WebServer.PNG)
+
 ## Task 4.6: Configure Elastic Beanstalk CLI and deploy the target web app
 
 ## Questions
