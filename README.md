@@ -58,7 +58,7 @@ The web application in the link:
 
 The new instance added to DynamoDB
 
-![Web Server 4.5](Images/4.6_Proofs.PNG)
+![Web Server 4.6](Images/4.6_Proofs.PNG)
 
 ## Questions
 
@@ -66,6 +66,20 @@ The new instance added to DynamoDB
 
 ### Q45c: Can you terminate the application using the command line? What is the command? if it exists.
 
+Yes, the `eb` tool provides a way to terminate an active application by using the following arguments: `eb terminate <environment_name>`.
+
 ### Q45d: What parameters have you added to the eb create command to create your environment? Explain why you have selected each parameter.
 
+The parameters used in the `eb create` command are the following ones: `eb create --envvars DEBUG=True,STARTUP_SIGNUP_TABLE=gsg-signup-table,AWS_REGION=eu-west-1 --service-role aws-elasticbeanstalk-service-role --elb-type classic --vpc.elbsubnets eu-west-1a`.
+
+The `--envvars` argument allows us to define environmental variables inside the instances deployed in Elastic Beanstalk. The first environmental variable, `DEBUG=True` is used in order to show more information in the logs, the `STARTUP_SIGNUP_TABLE=gsg-signup-table` specifies the table that we want to use which we have previously created in the DynamoDB, and finally the `AWS_REGION=eu-west-1` specifies the region of the EC2 instances.
+ 
+The `--service-role` is used in order to specify the service role that we want to use. In this case, the service role specified is the one needed for AWS EB as it already contains the default set of permissions and a trust policy that allows ElasticBeanstalk to assume the service role.
+
+Finally, the `--elb-type classic` is used in order to avoid to manually select the load balancing instance type, while the `--vpc.elbsubnets eu-west-1a` is used to indicate the subnet that will be used for this load balancing instsance to create more EC2 instances if needed.
+
 ### Q46: How long have you been working on this session? What have been the main difficulties you have faced and how have you solved them? 
+
+We have been working for several hours, as we encountered several issues. First, there was the problem with the environment created in the EB transitioning from healthy to severe, as it was unable to assume the role that we had previously created in the **IAM console**. To solve this issue, we just needed to update the code that the professor delivered to us, and change the `eb create` command that we were using for the one that has been described above with the new `--service-role` parameter updated, as the one that we were previously using did not have the correct permissions.
+
+After solving this issue, we run into the next one which was that, even though we were able to correctly create the environment and deploy our application, there was an error in it and the server was not able to correctly respond when accessing it, returning and HTTP 5xx error. By checking the logs, we were able to identify that the EC2 instance created had a `sqlite3` version which was too low for the DJango framework. So we accessed the EC2 instance and upgraded it, so we solved this error.
