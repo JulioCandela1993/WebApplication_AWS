@@ -50,7 +50,9 @@ At the end, we could initiallize the web application:
 
 ## Task 4.6: Configure Elastic Beanstalk CLI and deploy the target web app
 
-After facing some problems at the beginning, we executed the new code provided by the course and the app was working without inconvenients:
+After facing some problems at the beginning, we executed the new code provided by the course and the app was working without inconvenients.
+
+By using the **eb CLI** with the `-h` parameter, we obtain the list of all the options that can be used with this tool. We will focus on the `eb create` one, which is the option in charge of creating a new environment. So, repeating the process, we use the `eb create -h` tool to find all the arguments and its usage and we found that the `-s` or `--single` parameter allows to deploy a single instance without a load balancing. 
 
 The web application in the link: 
 
@@ -62,7 +64,14 @@ The new instance added to DynamoDB
 
 ## Questions
 
+### Q45a: What has happened? Why do you think that has happened?
+
+After manually terminating the EC2 instance that was used by ElasticBeanstalk from the EC2 terminal, the state from our environment in the EB terminal changed from **healthy** into **severe** due to the no responses received from the EC2 instances.
+After waiting several minutes, we re-checked the EC2 terminal and it appeared a new EC2 instance substituting the previously terminated one. Hence, the state from our EB environment has changed from **severe** to **ok** again.
+
 ### Q45b: What has happened? Why do you think that has happened?
+
+In this occasion, we have directly terminated the environment from the EB terminal, hence, correctly terminating the EC2 instances previously deployed and correctly terminating the EB environment as well.
 
 ### Q45c: Can you terminate the application using the command line? What is the command? if it exists.
 
