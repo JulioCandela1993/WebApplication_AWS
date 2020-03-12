@@ -42,13 +42,23 @@ In order to validate the result of the insertion, we opened the DynamoDB console
 
 During these steps, we faced some problems: 
 - First of all, the account must be validated in the region "Ireland". We sent an email to Amazon to allow this region for our account in EC2.
-- Then, the load balancer requires at least to sub regions, so in the configuration we changed it to sub region a and b.
+- Then, the load balancer requires at least two sub regions, so in the configuration we changed it to sub region a and b.
 
 At the end, we could initiallize the web application:   
 
 ![Web Server 4.5](Images/4.5_WebServer.PNG)
 
 ## Task 4.6: Configure Elastic Beanstalk CLI and deploy the target web app
+
+After facing some problems at the beginning, we executed the new code provided by the course and the app was working without inconvenients:
+
+The web application in the link: 
+
+![Web Server 4.6](Images/4.6_WebServer.PNG)
+
+The new instance added to DynamoDB
+
+![Web Server 4.5](Images/4.6_Proofs.PNG)
 
 ## Questions
 
