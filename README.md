@@ -91,6 +91,8 @@ Finally, the `--elb-type classic` is used in order to avoid to manually select t
 
 In the local execution, we faced some problems when executing from windows, but we solved it taking the quotes off. After that, the local web server executed well.
 
+Moreover, we faced a problem with region's validation. In order to solve it, we had to send a message to Amazon so that they can validate our region for ElasticBeanstalk.
+
 We have been working for several hours, as we encountered several issues. First, there was the problem with the environment created in the EB transitioning from healthy to severe, as it was unable to assume the role that we had previously created in the **IAM console**. To solve this issue, we just needed to update the code that the professor delivered to us, and change the `eb create` command that we were using for the one that has been described above with the new `--service-role` parameter updated, as the one that we were previously using did not have the correct permissions.
 
 After solving this issue, we run into the next one which was that, even though we were able to correctly create the environment and deploy our application, there was an error in it and the server was not able to correctly respond when accessing it, returning and HTTP 5xx error. By checking the logs, we were able to identify that the EC2 instance created had a `sqlite3` version which was too low for the DJango framework. So we accessed the EC2 instance and upgraded it, so we solved this error.
